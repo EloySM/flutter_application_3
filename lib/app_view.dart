@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+
+class MyAppView extends StatelessWidget {
+  const MyAppView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Expense Tracker',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.light(
+          surface: Colors.grey.shade100,
+          onSurface: Colors.black,
+          primary: Color(0xFF00B2E7),  // Se pone 0xFF al principio del numero hexadecimal para indical que estamos introduciendo un color en formato hexadecimal
+          secondary: Color(0xFFE064F7),
+          tertiary: Color(0xFFFF8D6C),
+        ),
+      ),
+      home: HomeScreen(),
+    );
+  }
+}
