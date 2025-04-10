@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/home/views/home_screen.dart';
 
 class MyAppView extends StatelessWidget {
   const MyAppView({super.key});
@@ -16,9 +17,10 @@ class MyAppView extends StatelessWidget {
           primary: Color(0xFF00B2E7),  // Se pone 0xFF al principio del numero hexadecimal para indical que estamos introduciendo un color en formato hexadecimal
           secondary: Color(0xFFE064F7),
           tertiary: Color(0xFFFF8D6C),
+          outline: Colors.grey
         ),
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
