@@ -230,10 +230,12 @@ class _AddExpenseState extends State<AddExpense> {
                                                 width: 40,
                                                 height: 40,
                                                 borderRadius: 4,
+                                                heading: Text('Select color', 
+                                                style: Theme.of(context).textTheme.titleMedium,),
                                               ).showPickerDialog(context);
 
                                           // al variable !colorSelected indica si no hay cun color seleccionado
-                                          if (!colorSelected) { setState(() =>
+                                          if (!colorSelected) { setState(() =>  // Si colorSelected es false significa que no se ha seleccionado ningun color por lo que tenfra el color por defecto (colorBeforeDialog) que es igual a la variable screenPeckerColor, que aunque no se le haya dado un color por defeto tiene el azul
                                               screenPickerColor = colorBeforeDialog,
                                             );
                                           }
@@ -251,6 +253,31 @@ class _AddExpenseState extends State<AddExpense> {
                                               16,
                                             ),
                                             borderSide: BorderSide.none,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 16,),
+                                      SizedBox(
+                                        width: double.infinity,
+                                        height: kToolbarHeight, // Altura estandar de la AppBar
+                                        child: TextButton(
+                                          onPressed: () {
+                                            // Crear categoria del objeto POP
+                                            Navigator.pop(context);
+                                          },
+                                          style: TextButton.styleFrom(
+                                            backgroundColor: Colors.black,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.circular(32),
+                                            ),
+                                          ),
+                                          child: Text(
+                                            'Save',
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
                                           ),
                                         ),
                                       ),
